@@ -798,3 +798,69 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById('messageInput').focus();
     }
 });
+
+
+// =========================================================================
+// AD PLACEMENT LOGIC (Used on all pages with ad containers)
+// =========================================================================
+
+function placeAdUnit(containerId, adSlotId, adFormat = 'auto') {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // The Client ID MUST match the one in js/ad-loader.js
+    const ADSENSE_CLIENT_ID = 'pub-7489296441212977'; 
+
+    // 1. Create the <ins> tag
+    const ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    
+    ins.setAttribute('data-ad-client', ADSENSE_CLIENT_ID); 
+    ins.setAttribute('data-ad-slot', adSlotId); // The unique ID for this specific ad slot
+    ins.setAttribute('data-ad-format', adFormat);
+    ins.setAttribute('data-full-width-responsive', 'true');
+
+    // 2. Clear placeholder content and append the ins tag
+    container.innerHTML = '';
+    container.appendChild(ins);
+
+    // 3. Push the ad request (Google's standard code)
+    if (window.adsbygoogle) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } else {
+        // Fallback for slower loading
+        setTimeout(() => (window.adsbygoogle = window.adsbygoogle || []).push({}), 500);
+    }
+}
+
+// Global Ad Initialization Function (This targets all your placeholder IDs)
+function initializeAds() {
+    // !!! CRITICAL: YOU MUST REPLACE THE DUMMY 10-DIGIT SLOT IDs BELOW WITH YOUR ACTUAL ADSENSE SLOT IDs !!!
+    
+    // Header/Top Banner Slot
+    placeAdUnit('ad-container-1', '4082944763', 'rectangle'); 
+
+    // Side Ad Left
+    placeAdUnit('ad-container-2', '7120171644'); 
+    
+    // Side Ad Right
+    placeAdUnit('ad-container-3', '6325964721'); 
+    
+    // In-Article Ad Slot
+    placeAdUnit('ad-container-article', '5609324014'); 
+
+    // Mobile Header Ad Slot
+    placeAdUnit('ad-container-mobile-header', '1073638042'); 
+    
+    // Mobile Footer/Bottom Ad Slot
+    placeAdUnit('ad-container-mobile-profile', '8885389897'); 
+}
+
+// Add this call inside your GLOBAL INITIALIZATION LOGIC (DOMContentLoaded) in script.js
+document.addEventListener("DOMContentLoaded", async () => {
+    // ... (Existing Theme & Page Logic) ...
+
+    // --- AD PLACEMENT INITIALIZATION ---
+    initializeAds();
+});
