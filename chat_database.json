@@ -1,0 +1,17 @@
+{
+    "qaPairs": [
+        {
+            "question": "Hi",
+            "answer": "I'm doing great, thank you for asking! I'm just looking for people to chat with. What's up?"
+        },
+        {
+            "question": "What is your favorite color?",
+            "answer": "I love the color blue! It's so calming and peaceful. What's yours?"
+        }
+    ],
+    "globalFallbacks": [
+        "That's an interesting thought! What else is on your mind?",
+        "I'm not sure how to respond to that, let's keep it fun!",
+        "Hmm, let's change the topic. Do you have a favorite movie or hobby?"
+    ]
+}

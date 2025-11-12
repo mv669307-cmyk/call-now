@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Girl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat-interface.css">
+
+    <script src="js/logo-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">CHAT-EDU</div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="theme-toggle">
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <div class="chat-container">
+        <div class="selected-profile-header">
+            <img id="girlProfileImg" src="" alt="Girl Profile">
+            <div>
+                <h2 id="girlName"></h2>
+                <div id="girlStatus" class="status"></div>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                Start a conversation by typing a message below...
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendMessageBtn">Send</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 EduConnect. All rights reserved.</p>
+        <div>
+            <a href="privacy-policy.html">Privacy</a> |
+            <a href="about-us.html">About Us</a> |
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

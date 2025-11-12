@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Profile Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="js/ad-loader.js" defer></script>
+  <script src="js/logo-loader.js"></script>
+</head>
+<body onload="loadRandomProfile(); startInitialCountdown();">
+  
+  <header>
+    <div class="logo">CHAT-EDU</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="theme-toggle">
+        <span>Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="ad-placeholder">
+    <h3>Sponsored Content</h3>
+    <div class="desktop-ad-content">
+      <div id="ad-container-1"></div>
+    </div>
+    <div class="mobile-ad-content">
+      <div class="ad-rect">
+        <div id="ad-container-mobile-header"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="profile-ad-wrapper">
+    <div class="ad-sponsored ad-sponsored-left">
+      <h3>Sponsored</h3>
+      <div class="ad-rect"><div id="ad-container-2"></div></div>
+    </div>
+    
+    <div class="profile-box">
+      <img id="profileImg" src="" alt="Profile" class="round-image" />
+      <div id="status" class="status">Loading...</div>
+      <div id="nameCity" class="name-city"></div>
+      
+      <div class="button-group">
+        <button class="video-call" id="videoCallBtn" disabled>Video Call (wait...20)</button>
+        <button class="chat-now" id="chatNowBtn" disabled>Chat Now (wait...20)</button>
+      </div>
+      <button class="find-new-btn" onclick="loadRandomProfile()">Find a New Profile</button>
+    </div>
+    
+    <div class="ad-sponsored ad-sponsored-right">
+      <h3>Sponsored</h3>
+      <div class="ad-rect"><div id="ad-container-3"></div></div>
+    </div>
+  </div>
+  
+  <div class="ad-sponsored ad-sponsored-mobile">
+    <h3>Sponsored</h3>
+    <div class="ad-rect">
+      <div id="ad-container-mobile-profile"></div>
+    </div>
+  </div>
+  
+  <article>
+    <h1>Best MBA Colleges in Kolkata – Top Institutes for Management Studies</h1>
+    
+    <p>If you want to do MBA in Kolkata, you are in the right place! Kolkata has some of the best MBA colleges in India. Many students dream of studying in these top MBA colleges in Kolkata because they offer quality education, good placements, and experienced teachers.</p>
+    
+    <div class="in-article-ad-container">
+      <h3>Sponsored Content</h3>
+      <div class="ad-rect">
+        <div id="ad-container-article"></div>
+      </div>
+    </div>
+    
+    <p>In this article, we will discuss the best management colleges in Kolkata, their fees, admission process, and placement records. Whether you want to study in a government MBA college in Kolkata or a private MBA college in Kolkata, this guide will help you choose the right institute.</p>
+    
+    <h2>Why Choose Kolkata for MBA?</h2>
+    <ul>
+      <li>Affordable cost of living compared to Delhi, Mumbai, or Bangalore</li>
+      <li>Top-ranked MBA colleges in Kolkata with excellent faculty</li>
+      <li>Good job opportunities after completing MBA in Kolkata</li>
+      <li>Many reputed companies visit for campus placements</li>
+    </ul>
+    
+    <p>Now, let’s look at the best MBA colleges in Kolkata for 2024.</p>
+    
+    <h2>1. Indian Institute of Management Calcutta (IIM Calcutta)</h2>
+    <p>IIM Calcutta is one of the top MBA colleges in Kolkata and even in India. It is ranked among the best IIMs in India.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹23 lakhs (approx.)</li>
+      <li>Entrance Exam: CAT (Common Admission Test)</li>
+      <li>Average Salary: ₹30+ LPA</li>
+      <li>Top Recruiters: Google, Amazon, McKinsey, TATA, HUL</li>
+    </ul>
+    
+    <h2>2. Xavier University Kolkata (XUB)</h2>
+    <p>Xavier University Kolkata is another top-ranked MBA college in Kolkata. It is famous for its MBA in Business Management (BM) and Human Resource Management (HRM).</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹12-15 lakhs</li>
+      <li>Entrance Exam: XAT/CAT/GMAT</li>
+      <li>Average Salary: ₹12-15 LPA</li>
+      <li>Top Recruiters: Deloitte, PwC, ICICI Bank, ITC</li>
+    </ul>
+    
+    <h2>3. Indian Institute of Social Welfare and Business Management (IISWBM)</h2>
+    <p>IISWBM is one of the oldest MBA colleges in Kolkata. It is a government MBA college in Kolkata and offers affordable MBA programs.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹2-3 lakhs</li>
+      <li>Entrance Exam: CAT/MAT/CMAT</li>
+      <li>Average Salary: ₹5-8 LPA</li>
+      <li>Top Recruiters: SBI, PNB, Wipro, Capgemini</li>
+    </ul>
+    
+    <h2>4. Calcutta University – Department of Business Management (DBM)</h2>
+    <p>Calcutta University is one of the best government MBA colleges in Kolkata. It offers MBA at a very low fee.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹50,000 – ₹1 lakh</li>
+      <li>Entrance Exam: CUMAT (Calcutta University Management Aptitude Test)</li>
+      <li>Average Salary: ₹4-6 LPA</li>
+      <li>Top Recruiters: Banks, Govt. Jobs, Private Companies</li>
+    </ul>
+    
+    <h2>5. Institute of Engineering & Management (IEM) Kolkata</h2>
+    <p>IEM Kolkata is a private MBA college in Kolkata with good industry connections.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹5-7 lakhs</li>
+      <li>Entrance Exam: CAT/MAT/CMAT</li>
+      <li>Average Salary: ₹6-10 LPA</li>
+      <li>Top Recruiters: TCS, Infosys, Cognizant</li>
+    </ul>
+    
+    <h2>6. Jadavpur University – Department of Business Management</h2>
+    <p>Jadavpur University is a top government MBA college in Kolkata. It offers MBA at a very low cost.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹1-2 lakhs</li>
+      <li>Entrance Exam: CAT/MAT</li>
+      <li>Average Salary: ₹5-8 LPA</li>
+      <li>Top Recruiters: IT Companies, Banks, MNCs</li>
+    </ul>
+    
+    <h2>7. Army Institute of Management (AIM), Kolkata</h2>
+    <p>AIM Kolkata is a private MBA college in Kolkata with a focus on leadership and management skills.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹4-6 lakhs</li>
+      <li>Entrance Exam: CAT/MAT</li>
+      <li>Average Salary: ₹6-9 LPA</li>
+      <li>Top Recruiters: Indian Army, Corporate Companies</li>
+    </ul>
+    
+    <h2>8. Techno India University, Kolkata</h2>
+    <p>Techno India is a private MBA college in Kolkata with modern teaching methods.</p>
+    
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Course: MBA (2 years)</li>
+      <li>Fees: ₹3-5 lakhs</li>
+      <li>Entrance Exam: MAT/CMAT</li>
+      <li>Average Salary: ₹4-7 LPA</li>
+      <li>Top Recruiters: Startups, IT Companies</li>
+    </ul>
+    
+    <h2>How to Get Admission in Best MBA Colleges in Kolkata?</h2>
+    <ol>
+      <li>Pass 12th and Graduation (Minimum 50% marks)</li>
+      <li>Appear for Entrance Exams (CAT, MAT, XAT, CMAT)</li>
+      <li>Apply to Colleges (Check official websites)</li>
+      <li>Clear GD & PI (Group Discussion & Personal Interview)</li>
+      <li>Get Selected & Pay Fees</li>
+    </ol>
+    
+    <h2>Which MBA College in Kolkata is Best for You?</h2>
+    <ul>
+      <li>For Top Placements: IIM Calcutta, XUB</li>
+      <li>For Low Fees: Calcutta University, IISWBM</li>
+      <li>For Private Colleges: IEM, Techno India</li>
+      <li>For Government Colleges: Jadavpur University, IISWBM</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>Kolkata has many best MBA colleges for students. If you want high salary jobs, choose IIM Calcutta or XUB. If you want low fees, go for Calcutta University or IISWBM.</p>
+    
+    <p>Before selecting a college, check:</p>
+    <ul>
+      <li>✔ Fees</li>
+      <li>✔ Placements</li>
+      <li>✔ Course Structure</li>
+      <li>✔ Location</li>
+    </ul>
+    
+    <p>We hope this guide helps you choose the best MBA college in Kolkata. Work hard, prepare well, and you will surely succeed!</p>
+    
+    <h2>FAQs About Best MBA Colleges in Kolkata</h2>
+    <p>Q1. Which is the No. 1 MBA college in Kolkata?<br>
+    Ans: IIM Calcutta is the best MBA college in Kolkata.</p>
+    
+    <p>Q2. What is the fees of MBA in Kolkata?<br>
+    Ans: Fees range from ₹50,000 (government colleges) to ₹25 lakhs (IIM Calcutta).</p>
+    
+    <p>Q3. Which entrance exam is best for MBA in Kolkata?<br>
+    Ans: CAT is the best for IIMs, while MAT/CMAT is good for other colleges.</p>
+    
+    <p>Q4. Can I get a job after MBA in Kolkata?<br>
+    Ans: Yes, top MBA colleges in Kolkata have good placements.</p>
+    
+    <p>Q5. Which MBA college in Kolkata has the lowest fees?<br>
+    Ans: Calcutta University and IISWBM have the lowest MBA fees in Kolkata.</p>
+    
+    <p>If you want to study in the best MBA colleges in Kolkata, start preparing today! 🚀</p>
+  </article>
+  
+  <footer>
+    <p>&copy; 2025 EduConnect. All rights reserved.</p>
+    <div>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+  
+  <div id="offlinePopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>User Status</h2>
+      <p>This user is currently offline. Please try again later!</p>
+      <button onclick="hidePopup()">Got It!</button>
+    </div>
+  </div>
+  
+  <script src="js/script.js" defer></script>
+</body>
+</html>

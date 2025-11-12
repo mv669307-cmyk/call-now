@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Local Girls</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/ad-loader.js" defer></script>
+    <script src="js/logo-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">CHAT-EDU</div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="theme-toggle">
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <div class="ad-placeholder">
+        <p>Sponsored Content</p>
+        <div class="desktop-ad-content">
+            <div id="ad-container-1"></div>
+        </div>
+        <div class="mobile-ad-content">
+            <div class="ad-rect">
+                <div id="ad-container-mobile-header"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-ad-wrapper">
+        <div class="ad-sponsored ad-sponsored-left">
+            <p>Sponsored</p>
+            <div class="ad-rect"><div id="ad-container-2"></div></div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-box">
+                <h1>Find Girls From Your Area</h1>
+                <form id="findGirlsForm">
+                    <div class="form-group">
+                        <label for="stateSelect">Select Your State</label>
+                        <div class="modern-dropdown">
+                            <select id="stateSelect">
+                                <option value="">-- Select State --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="citySelect">Select Your City</label>
+                        <div class="modern-dropdown">
+                            <select id="citySelect" disabled>
+                                <option value="">-- Select City --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <div class="modern-checkbox">
+                            <input type="checkbox" id="girlsCheckbox" value="girls">
+                            <label for="girlsCheckbox"><span></span>Girls</label>
+                        </div>
+                        <div class="modern-checkbox">
+                            <input type="checkbox" id="womenCheckbox" value="women">
+                            <label for="womenCheckbox"><span></span>Women</label>
+                        </div>
+                    </div>
+
+                    <div class="modern-alert-box" id="validationAlert" style="display: none;">
+                        <span class="alert-icon"><i class="fas fa-exclamation-circle"></i></span>
+                        <div class="alert-message" id="validationAlertMessage"></div>
+                        <button class="close-btn" onclick="document.getElementById('validationAlert').style.display='none';">&times;</button>
+                    </div>
+
+                    <button type="submit" class="find-girls-btn">Find Local Girls</button>
+                </form>
+
+                <div class="progress-container" id="progressBarContainer" style="display: none;">
+                    <span id="progressPercentage">0%</span>
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text-below" id="progressText">
+                        Finding local girls from your area...
+                    </div>
+                </div>
+            </div>
+
+            <div class="found-profiles-section" id="foundProfilesSection" style="display: none;">
+                <h2 id="profilesFoundCount"></h2>
+                <div class="found-profiles-grid" id="foundProfilesGrid">
+                </div>
+            </div>
+        </div>
+        
+        <div class="ad-sponsored ad-sponsored-right">
+            <p>Sponsored</p>
+            <div class="ad-rect"><div id="ad-container-3"></div></div>
+        </div>
+    </div>
+
+    <div class="ad-sponsored ad-sponsored-mobile">
+        <h3>Sponsored</h3>
+        <div class="ad-rect">
+            <div id="ad-container-mobile-profile"></div>
+        </div>
+    </div>
+
+    <article>
+        <h1>Which is the Best MBA College in Delhi and Why?</h1>
+        <p>Choosing the best MBA college in Delhi is a key step for many Indian students aiming for a career in management. Delhi and the National Capital Region (NCR) form a major business hub with many companies, offering great chances for industry exposure and job opportunities. Let's look at some of the top management institutes in this region.</p>
+        
+        <div class="in-article-ad-container">
+            <h3>Sponsored Content</h3>
+            <div class="ad-rect">
+                <div id="ad-container-article"></div>
+            </div>
+        </div>
+        
+        <h2>Top MBA Colleges in Delhi NCR</h2>
+        <p>When discussing top MBA colleges in Delhi NCR, certain names consistently stand out. The Faculty of Management Studies (FMS), University of Delhi, is often considered a premier choice. Other highly regarded business schools include Management Development Institute (MDI) Gurgaon, Indian Institute of Foreign Trade (IIFT) Delhi, Indian Management Technology (IMT) Ghaziabad, and International Management Institute (IMI) Delhi. These institutes attract bright minds looking for quality management education.</p>
+        
+        <h2>Why FMS Delhi is Often a Top Choice</h2>
+        <p>FMS Delhi is widely considered one of the top MBA colleges due to several strong reasons. Firstly, its long-standing legacy and reputation are very strong. It has consistently provided excellent management education for many years. Secondly, its location within the University of Delhi campus gives it a unique academic environment. The fee structure at FMS is remarkably low compared to most other top MBA programs, making its return on investment (ROI) exceptionally high.</p>
+        <p>The placements at FMS Delhi are consistently excellent. Top companies from various sectors, including consulting, finance, marketing, and general management, actively recruit from the campus. The average salary package offered to FMS graduates is always very competitive, which is a major draw for students seeking good career outcomes. The strong alumni network of FMS also plays a big role, with former students holding influential positions across many industries, helping current students with mentorship and job prospects.</p>
+        
+        <h2>Other Excellent MBA Options in Delhi NCR</h2>
+        <p>While FMS Delhi is a highly sought-after institute, MDI Gurgaon is another excellent private business school known for its strong curriculum, experienced faculty, and strong corporate connections. It offers diverse MBA specializations and boasts impressive placements. IIFT Delhi is a great option for those interested in International Business, with a specialized curriculum and placements in global trade and finance roles.</p>
+        <p>IMT Ghaziabad and IMI Delhi are also popular choices. IMT is known for its strong marketing and finance programs and good industry interface. IMI Delhi offers a diverse range of management programs with a focus on leadership development. These colleges provide a vibrant campus life and attract a good number of companies for campus placements, offering a variety of roles to graduates.</p>
+        
+        <h2>Choosing the Right MBA College for You</h2>
+        <p>To pick the best MBA college in Delhi NCR, consider what matters most to you. Look at the admission criteria, including required entrance exams like CAT, XAT, GMAT, or MAT, and their cut-off scores. Research the faculty's expertise – professors with real-world experience can greatly enhance your learning. Also, check the college's infrastructure, like libraries and modern classrooms, as a good learning environment is very important. Finally, deeply research the placement track record and the types of companies that visit for campus placements. Considering these factors will help you make a smart decision and choose the right management institute for your future career in the bustling Delhi NCR region.</p>
+    </article>
+
+    <footer>
+        <p>&copy; 2025 EduConnect. All rights reserved.</p>
+        <div>
+            <a href="privacy-policy.html">Privacy</a> |
+            <a href="about-us.html">About Us</a> |
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
