@@ -673,32 +673,6 @@ function loadSelectedGirl() {
 // GLOBAL INITIALIZATION LOGIC (Runs on ALL Pages via DOMContentLoaded)
 // =========================================================================
 
-document.addEventListener("DOMContentLoaded", async () => {
-    // ... (Theme initialization logic runs here) ...
-
-    // E. Logic for chat-interface.html (Live Chat)
-    if (document.getElementById('chatMessages')) {
-        loadSelectedGirl();
-        
-        // Bind the Send button and Enter key
-        const sendMessageBtn = document.getElementById('sendMessageBtn');
-        const messageInput = document.getElementById('messageInput');
-        
-        if (sendMessageBtn) sendMessageBtn.addEventListener('click', sendMessage);
-        if (messageInput) {
-            messageInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter' && !event.shiftKey) {
-                    event.preventDefault();
-                    sendMessage();
-                }
-            });
-            messageInput.focus();
-        }
-    }
-    
-    // ... (Other page logic checks run here) ...
-});
-
 function loadSelectedGirl() {
     const selectedGirlData = localStorage.getItem('selectedGirlProfile');
     const chatMessages = document.getElementById('chatMessages');
@@ -755,6 +729,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.addEventListener('resize', applyNavTheme);
     }
     
+    // --- AD PLACEMENT INITIALIZATION (Must run early) ---
+    initializeAds();
+    
     // 2. Run Page-Specific Logic
     
     // B. Logic for second-page.html (App Icons/Countdown)
@@ -804,7 +781,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // AD PLACEMENT LOGIC (Used on all pages with ad containers)
 // =========================================================================
 
-function placeAdUnit(containerId, adSlotId, adFormat = 'auto') {
+function placeAdUnit(containerId, adSlotId, adFormat = 'auto', fullWidthResponsive = true) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -815,52 +792,71 @@ function placeAdUnit(containerId, adSlotId, adFormat = 'auto') {
     const ins = document.createElement('ins');
     ins.className = 'adsbygoogle';
     ins.style.display = 'block';
+    ins.style.width = '100%';
+    ins.style.height = '100%';
     
     ins.setAttribute('data-ad-client', ADSENSE_CLIENT_ID); 
     ins.setAttribute('data-ad-slot', adSlotId); // The unique ID for this specific ad slot
     ins.setAttribute('data-ad-format', adFormat);
-    ins.setAttribute('data-full-width-responsive', 'true');
+    ins.setAttribute('data-full-width-responsive', fullWidthResponsive.toString());
 
     // 2. Clear placeholder content and append the ins tag
     container.innerHTML = '';
     container.appendChild(ins);
 
     // 3. Push the ad request (Google's standard code)
-    if (window.adsbygoogle) {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } else {
-        // Fallback for slower loading
-        setTimeout(() => (window.adsbygoogle = window.adsbygoogle || []).push({}), 500);
+    try {
+        if (window.adsbygoogle && Array.isArray(window.adsbygoogle)) {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } else {
+            // Fallback for slower loading
+            setTimeout(() => {
+                if (window.adsbygoogle) {
+                    (window.adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            }, 1000);
+        }
+    } catch (e) {
+        console.error('AdSense push error:', e);
     }
 }
 
 // Global Ad Initialization Function (This targets all your placeholder IDs)
 function initializeAds() {
+    // Check if mobile or desktop
+    const isMobile = window.innerWidth < 768;
+    
     // !!! CRITICAL: YOU MUST REPLACE THE DUMMY 10-DIGIT SLOT IDs BELOW WITH YOUR ACTUAL ADSENSE SLOT IDs !!!
     
-    // Header/Top Banner Slot
-    placeAdUnit('ad-container-1', '4082944763', 'rectangle'); 
+    // Header/Top Banner Slot (Desktop only)
+    if (!isMobile) {
+        placeAdUnit('ad-container-1', '4082944763', 'horizontal', true); 
+    }
 
-    // Side Ad Left
-    placeAdUnit('ad-container-2', '7120171644'); 
+    // Side Ad Left (Desktop only)
+    if (!isMobile) {
+        placeAdUnit('ad-container-2', '7120171644', 'rectangle', false); 
+    }
     
-    // Side Ad Right
-    placeAdUnit('ad-container-3', '6325964721'); 
+    // Side Ad Right (Desktop only)
+    if (!isMobile) {
+        placeAdUnit('ad-container-3', '6325964721', 'rectangle', false); 
+    }
     
     // In-Article Ad Slot
-    placeAdUnit('ad-container-article', '5609324014'); 
+    if (isMobile) {
+        placeAdUnit('ad-container-article', '5609324014', 'rectangle', false);
+    } else {
+        placeAdUnit('ad-container-article', '5609324014', 'rectangle', false);
+    }
 
     // Mobile Header Ad Slot
-    placeAdUnit('ad-container-mobile-header', '1073638042'); 
+    if (isMobile) {
+        placeAdUnit('ad-container-mobile-header', '1073638042', 'horizontal', true); 
+    }
     
     // Mobile Footer/Bottom Ad Slot
-    placeAdUnit('ad-container-mobile-profile', '8885389897'); 
+    if (isMobile) {
+        placeAdUnit('ad-container-mobile-profile', '8885389897', 'horizontal', true); 
+    }
 }
-
-// Add this call inside your GLOBAL INITIALIZATION LOGIC (DOMContentLoaded) in script.js
-document.addEventListener("DOMContentLoaded", async () => {
-    // ... (Existing Theme & Page Logic) ...
-
-    // --- AD PLACEMENT INITIALIZATION ---
-    initializeAds();
-});

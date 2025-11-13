@@ -555,10 +555,42 @@ body.dark-mode .popup-box p {
 /* Ad Rectangle styles (Used by ads on the homepage) */
 .desktop-ad-content {
     display: block;
+    min-width: 728px;
+    min-height: 90px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.desktop-ad-content > div {
+    width: 100%;
+    min-width: 728px;
+    min-height: 90px;
 }
 
 .mobile-ad-content {
     display: none;
+}
+
+/* Global AdSense container fixes */
+ins.adsbygoogle {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ensure all ad containers have proper dimensions */
+#ad-container-1,
+#ad-container-2,
+#ad-container-3,
+#ad-container-article,
+#ad-container-mobile-header,
+#ad-container-mobile-profile {
+    width: 100%;
+    height: 100%;
+    min-width: inherit;
+    min-height: inherit;
+    display: block;
+    overflow: hidden;
 }
 
 .in-article-ad-container {
@@ -570,6 +602,22 @@ body.dark-mode .popup-box p {
     background: var(--light-ad-bg);
     transition: var(--transition-ease);
     max-width: 90%;
+    width: 100%;
+}
+
+.in-article-ad-container .ad-rect {
+    width: 336px;
+    height: 280px;
+    min-width: 300px;
+    min-height: 250px;
+}
+
+.in-article-ad-container .ad-rect > div,
+.in-article-ad-container .ad-rect ins {
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+    min-height: 250px;
 }
 
 body.dark-mode .in-article-ad-container {
@@ -616,17 +664,29 @@ body.dark-mode .ad-sponsored {
 .ad-rect {
     width: 300px;
     height: 250px;
+    min-width: 300px;
+    min-height: 250px;
     background: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #888;
     font-size: 1.1rem;
+    overflow: hidden;
 }
 
 body.dark-mode .ad-rect {
     background: var(--dark-bg);
     color: #e2e8f0;
+}
+
+/* Ad container inner elements need proper sizing */
+.ad-rect ins,
+.ad-rect > div {
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+    min-height: 250px;
 }
 
 /* --- General Page Content Styles (About/Contact/Privacy) --- */
@@ -960,11 +1020,44 @@ body.dark-mode .contact-form button:hover {
     .mobile-ad-content {
         display: flex;
         justify-content: center;
+        width: 100%;
+        min-width: 320px;
+        min-height: 100px;
+    }
+
+    .mobile-ad-content .ad-rect {
+        width: 320px;
+        height: 100px;
+        min-width: 320px;
+        min-height: 100px;
+    }
+
+    .mobile-ad-content .ad-rect > div,
+    .mobile-ad-content .ad-rect ins {
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        min-height: 100px;
     }
 
     .in-article-ad-container {
         margin: 20px 15px;
         max-width: 100%;
+    }
+
+    .in-article-ad-container .ad-rect {
+        width: 320px;
+        height: 100px;
+        min-width: 320px;
+        min-height: 100px;
+    }
+
+    .in-article-ad-container .ad-rect > div,
+    .in-article-ad-container .ad-rect ins {
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        min-height: 100px;
     }
 
     .ad-sponsored-left,
@@ -976,9 +1069,25 @@ body.dark-mode .contact-form button:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 18px;
+        margin: 18px auto;
         width: 100%;
         max-width: 90%;
+    }
+    
+    .ad-sponsored-mobile .ad-rect {
+        width: 320px;
+        height: 100px;
+        min-width: 320px;
+        min-height: 100px;
+        max-width: 100%;
+    }
+
+    .ad-sponsored-mobile .ad-rect > div,
+    .ad-sponsored-mobile .ad-rect ins {
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        min-height: 100px;
     }
     
     /* Pages: Mobile content adjustments */
