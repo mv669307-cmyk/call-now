@@ -42,6 +42,11 @@
     --transition-popup: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
+/* Ensure html element allows fixed/sticky positioning for ads */
+html {
+    overflow-y: scroll; /* Allow vertical scrolling */
+}
+
 ul {
     list-style: none;
     padding-left: 0;
@@ -73,6 +78,9 @@ body {
     color: var(--light-text);
     transition: var(--transition-ease);
     line-height: 1.6;
+    /* Allow fixed and sticky positioned elements to display */
+    position: static;
+    overflow: visible;
 }
 
 body.dark-mode {

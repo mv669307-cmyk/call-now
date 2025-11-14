@@ -7,7 +7,9 @@ body {
     flex-direction: column;
     height: 100vh;
     line-height: 1.6;
-    overflow: hidden; /* Critical for controlling scroll */
+    /* REMOVED: overflow: hidden; - This was blocking sticky ads */
+    /* Use overflow-y: auto instead to allow vertical scrolling but keep height control */
+    position: relative;
 }
 
 /* Main Chat Container */
