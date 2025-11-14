@@ -315,10 +315,9 @@ body.dark-mode .welcome-message {
 }
 
 @media (max-width: 767px) {
-    header, footer { display: none; } /* Hide header and footer on mobile */
+    header, footer /* Hide header and footer on mobile */
     body { 
-        height: 100vh; 
-        overflow: hidden;
+        height: auto; 
         padding: 0;
         margin: 0;
     } /* Make body full height and hide scrollbar */

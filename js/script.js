@@ -854,9 +854,4 @@ function initializeAds() {
     if (isMobile) {
         placeAdUnit('ad-container-mobile-header', '1073638042', 'horizontal', true); 
     }
-    
-    // Mobile Footer/Bottom Ad Slot
-    if (isMobile) {
-        placeAdUnit('ad-container-mobile-profile', '8885389897', 'horizontal', true); 
-    }
 }
