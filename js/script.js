@@ -830,28 +830,28 @@ function initializeAds() {
     
     // Header/Top Banner Slot (Desktop only)
     if (!isMobile) {
-        placeAdUnit('ad-container-1', '4082944763', 'horizontal', true); 
+        placeAdUnit('ad-container-1', '4082944763', 'auto', true); 
     }
 
     // Side Ad Left (Desktop only)
     if (!isMobile) {
-        placeAdUnit('ad-container-2', '7120171644', 'rectangle', false); 
+        placeAdUnit('ad-container-2', '7120171644', 'auto', false); 
     }
     
     // Side Ad Right (Desktop only)
     if (!isMobile) {
-        placeAdUnit('ad-container-3', '6325964721', 'rectangle', false); 
+        placeAdUnit('ad-container-3', '6325964721', 'auto', false); 
     }
     
     // In-Article Ad Slot
     if (isMobile) {
-        placeAdUnit('ad-container-article', '5609324014', 'rectangle', false);
+        placeAdUnit('ad-container-article', '5609324014', 'auto', false);
     } else {
-        placeAdUnit('ad-container-article', '5609324014', 'rectangle', false);
+        placeAdUnit('ad-container-article', '5609324014', 'auto', false);
     }
 
     // Mobile Header Ad Slot
     if (isMobile) {
-        placeAdUnit('ad-container-mobile-header', '1073638042', 'horizontal', true); 
+        placeAdUnit('ad-container-mobile-header', '1073638042', 'auto', true); 
     }
 }
