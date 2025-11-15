@@ -99,6 +99,8 @@ header {
     position: relative;
     box-shadow: 0 2px 10px var(--light-shadow);
     transition: var(--transition-ease);
+    z-index: 100;
+}
 }
 
 body.dark-mode header {
@@ -579,25 +581,18 @@ body.dark-mode .popup-box p {
     display: none;
 }
 
-/* Global AdSense container fixes */
+/* Global AdSense container fixes - let Google ads auto-adjust */
 ins.adsbygoogle {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
+    display: block;
 }
 
-/* Ensure all ad containers have proper dimensions */
+/* Let Google ads auto-adjust in their containers */
 #ad-container-1,
 #ad-container-2,
 #ad-container-3,
 #ad-container-article,
 #ad-container-mobile-header {
-    width: 100%;
-    height: 100%;
-    min-width: inherit;
-    min-height: inherit;
     display: block;
-    overflow: hidden;
 }
 
 .in-article-ad-container {
@@ -613,18 +608,12 @@ ins.adsbygoogle {
 }
 
 .in-article-ad-container .ad-rect {
-    width: 336px;
-    height: 280px;
-    min-width: 300px;
-    min-height: 250px;
+    display: block;
 }
 
 .in-article-ad-container .ad-rect > div,
 .in-article-ad-container .ad-rect ins {
-    width: 100%;
-    height: 100%;
-    min-width: 300px;
-    min-height: 250px;
+    display: block;
 }
 
 body.dark-mode .in-article-ad-container {
@@ -669,17 +658,7 @@ body.dark-mode .ad-sponsored {
 }
 
 .ad-rect {
-    width: 300px;
-    height: 250px;
-    min-width: 300px;
-    min-height: 250px;
-    background: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-size: 1.1rem;
-    overflow: hidden;
+    display: block;
 }
 
 body.dark-mode .ad-rect {
@@ -687,13 +666,10 @@ body.dark-mode .ad-rect {
     color: #e2e8f0;
 }
 
-/* Ad container inner elements need proper sizing */
+/* Ad container inner elements - let Google auto-adjust */
 .ad-rect ins,
 .ad-rect > div {
-    width: 100%;
-    height: 100%;
-    min-width: 300px;
-    min-height: 250px;
+    display: block;
 }
 
 /* --- General Page Content Styles (About/Contact/Privacy) --- */

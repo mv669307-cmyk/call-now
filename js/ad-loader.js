@@ -1,6 +1,6 @@
 /**
  * js/ad-loader.js
- * * Purpose: Inserts the global Google AdSense script into the page head.
+ * Purpose: Inserts the global Google AdSense script into the page head.
  */
 (function() {
     // 1. Live AdSense Publisher ID (Client ID)
