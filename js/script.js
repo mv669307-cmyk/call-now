@@ -732,6 +732,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // --- AD PLACEMENT INITIALIZATION (Must run early) ---
     initializeAds();
     
+    // --- ANCHOR AD INITIALIZATION (Sticky Footer) ---
+    initializeAnchorAd();
+    
     // 2. Run Page-Specific Logic
     
     // B. Logic for second-page.html (App Icons/Countdown)
@@ -854,4 +857,28 @@ function initializeAds() {
     if (isMobile) {
         placeAdUnit('ad-container-mobile-header', '1073638042', 'auto', true); 
     }
+}
+
+// =========================================================================
+// ANCHOR AD INITIALIZATION (Sticky Footer Ad)
+// =========================================================================
+
+function initializeAnchorAd() {
+    const anchorAdContainer = document.getElementById('anchorAd');
+    if (!anchorAdContainer) return;
+
+    // Add body padding to prevent content from being covered by sticky ad
+    document.body.classList.add('has-anchor-ad');
+
+    // Push the ad to Google's adsbygoogle queue
+    setTimeout(() => {
+        if (window.adsbygoogle) {
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+                console.log('Anchor ad initialized');
+            } catch (e) {
+                console.error('Anchor ad error:', e);
+            }
+        }
+    }, 500);
 }

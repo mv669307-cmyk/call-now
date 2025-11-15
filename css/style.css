@@ -2339,3 +2339,41 @@ body.dark-mode .found-profile-card .city {
     }
 }
 
+/* =========================================================================
+   GOOGLE ADSENSE ANCHOR AD COMPONENT (Sticky Footer/Top Ads)
+   ========================================================================= */
+
+/* Sticky Ad Container - Let Google manage all styling */
+.adsense-anchor-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* Allow ads inside the container to be interactive */
+.adsense-anchor-ad ins.adsbygoogle {
+    display: block !important;
+}
+
+/* Ensure body has bottom padding to not be covered by sticky ad */
+body.has-anchor-ad {
+    padding-bottom: 100px;
+}
+
+/* Mobile specific - reduce padding on mobile */
+@media (max-width: 767px) {
+    body.has-anchor-ad {
+        padding-bottom: 70px;
+    }
+}
+
+/* Desktop specific */
+@media (min-width: 768px) {
+    body.has-anchor-ad {
+        padding-bottom: 100px;
+    }
+}
+
